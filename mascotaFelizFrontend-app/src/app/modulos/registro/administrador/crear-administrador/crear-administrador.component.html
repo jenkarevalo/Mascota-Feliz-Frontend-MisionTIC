@@ -1,0 +1,87 @@
+<section class="container">
+    <div class="row registro-titulo">
+        <div class="col s12">
+            <h2 class="center-align">Regístro de Administradores</h2>
+        </div>
+    </div>
+</section>
+<section class="container">
+    <div class="row ">
+        <div class="col s12">
+            <div class="card-panel">
+                <form [formGroup]="formAdministrador" (ngSubmit)="guardarAdministrador()" action="">
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input formControlName="PrimerNombre" placeholder="" id="primerNombre" type="text"
+                                class="validate">
+                            <label for="primerNombre">Primer Nombre</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="SegundoNombre" placeholder="" id="segundoNombre" type="text"
+                                class="validate">
+                            <label for="segundoNombre">Segundo Nombre</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="PrimerApellido" id="primerApellido" type="text" class="validate">
+                            <label for="primerApellido">Primer Apellido</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="SegundoApellido" id="segundoApellido" type="text" class="validate">
+                            <label for="segundoApellido">Segundo Apellido</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="TipoDocumento" id="tipoDocumento" type="text" class="validate">
+                            <label for="tipoDocumento">Tipo de Documento</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="NumeroDocumento" id="numeroDocumento" type="text" class="validate">
+                            <label for="numeroDocumento">Numero de Documento</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="Ciudad" id="ciudad" type="tel" class="validate">
+                            <label for="ciudad">Ciudad</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="Direccion" id="direccion" type="tel" class="validate">
+                            <label for="direccion">Direccion</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="Telefono" id="telefono" type="tel" class="validate">
+                            <label for="telefono">Telefono</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="AsesorId" id="asesorId" type="tel" class="validate">
+                            <label for="asesorId">Asesor</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="PlanId" id="plan" type="tel" class="validate">
+                            <label for="plan">Plan</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input formControlName="Email" id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input formControlName="Clave" id="clave" type="clave" class="validate">
+                            <label for="clave">clave</label>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="row">
+                            <div class="col s12">
+                                <button [disabled]="!formAdministrador.valid" class="btn black waves-effect waves-light"
+                                    type="submit" name="action">Guardar
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

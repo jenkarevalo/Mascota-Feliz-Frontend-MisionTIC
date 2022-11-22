@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+<nav>
+    <nav class="green">
+        <div class="nav-wrapper">
+            <a routerLink="/inicio"></a>
+            <img class="responsivbe-img z-depth-2" src="../../../assets/Logo.png" alt="Logo pagina" width="220" height="120" />
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li *ngIf="seInicioSesion===true">
+                    <a routerLink="/registro/administrador/buscar-Administrador">Administrador</a>
+                </li>
+                <li *ngIf="seInicioSesion===true">
+                    <a routerLink="/registro/asesor/buscar-Asesor">Asesor</a>
+                </li>
+                <li *ngIf="seInicioSesion===true">
+                    <a routerLink="/registro/cliente/buscar-Cliente">Cliente</a>
+                </li>
+                <li *ngIf="seInicioSesion===false">
+                    <a routerLink="/seguridad/login" class="btn grey darken-3 waves-effect waves-light">Iniciar Sesión</a>
+                </li>
+                <li *ngIf="seInicioSesion===true">
+                    <a (click)="cerrarSesion()">Cerrar Sesion</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="header-main-pic z-depth-2"></section>
+</nav>

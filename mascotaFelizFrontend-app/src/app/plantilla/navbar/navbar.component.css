@@ -1,0 +1,16 @@
+@media (min-width: 500px) { /* si desea, cambiar tamaño de la pantalla en esta línea */
+    nav {
+        height: 125px !important;            /* Cambia el valor de lo que quieres */
+        line-height: 125px !important;
+        font-family: cursive;
+        font-size: medium;       /* Cambia el valor de lo que quieres */
+    }
+    .header-main-pic {
+        width: 100%;
+        height: 650px;
+        background-image: url('../../../assets/mascota.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}

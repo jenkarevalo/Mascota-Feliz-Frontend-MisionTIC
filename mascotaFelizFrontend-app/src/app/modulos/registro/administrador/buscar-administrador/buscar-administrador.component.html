@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col s12 m11">
+      <div class="card">
+        <div class="card-image">
+          <img src="../../../../../assets/administrador.jpg">
+        </div>
+        <table class="striped">
+          <thead>
+            <tr>
+              <th>Primer Nombre</th>
+              <th>Segundo Nombre</th>
+              <th>Primer Apellido</th>
+              <th>Segundo Apellido</th>
+              <th>Tipo de Documento</th>
+              <th>Numero de Documento</th>
+              <th>Ciudad</th>
+              <th>Direccion</th>
+              <th>Telefono</th>
+              <th>Asesor</th>
+              <th>Plan</th>
+              <th>Email</th>
+              <th>clave</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let admin of listadoAdministradores">
+              <td>{{admin.primerNombre}}</td>
+              <td>{{admin.segundoNombre}}</td>
+              <td>{{admin.primerApellido}}</td>
+              <td>{{admin.segundoApellido}}</td>
+              <td>{{admin.tipoDocumento}}</td>
+              <td>{{admin.numeroDocumento}}</td>
+              <td>{{admin.ciudad}}</td>
+              <td>{{admin.direccion}}</td>
+              <td>{{admin.telefono}}</td>
+              <td>{{admin.asesorId}}</td>
+              <td>{{admin.planId}}</td>
+              <td>{{admin.email}}</td>
+              <td>{{admin.clave}}</td>
+              <td>
+                <a routerLink='/registro/editar-Administrador/{{admin.id}}'>
+                  <span>Editar</span>
+                </a>
+              </td>
+              <td>
+                <a routerLink="/registro/eliminar-Administrador">
+                  <span>Eliminar</span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br><br>
+        <div class="card-action">
+          <a class="waves-effect waves-light black btn" routerLink="/registro/crear-Administrador">Registrar
+            Administrador</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

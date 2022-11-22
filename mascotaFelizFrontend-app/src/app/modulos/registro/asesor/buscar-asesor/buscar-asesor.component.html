@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col s12 m11">
+        <div class="card">
+            <div class="card-image">
+                <img src="../../../../../assets/asesor.jpg">
+            </div>
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Primer Nombre</th>
+                        <th>Segundo Nombre</th>
+                        <th>Primer Apellido</th>
+                        <th>Segundo Apellido</th>
+                        <th>Tipo de Documento</th>
+                        <th>Numero de Documento</th>
+                        <th>Ciudad</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Solicitud</th>
+                        <th>Mascota</th>
+                        <th>Email</th>
+                        <th>clave</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let ase of listadoAsesores">
+                        <td>{{ase.primerNombre}}</td>
+                        <td>{{ase.segundoNombre}}</td>
+                        <td>{{ase.primerApellido}}</td>
+                        <td>{{ase.segundoApellido}}</td>
+                        <td>{{ase.tipoDocumento}}</td>
+                        <td>{{ase.numeroDocumento}}</td>
+                        <td>{{ase.ciudad}}</td>
+                        <td>{{ase.direccion}}</td>
+                        <td>{{ase.telefono}}</td>
+                        <td>{{ase.solicitudId}}</td>
+                        <td>{{ase.mascotaId}}</td>
+                        <td>{{ase.email}}</td>
+                        <td>{{ase.clave}}</td>
+                        <td>
+                            <a routerLink='/registro/editar-Asesor/{{ase.id}}'>
+                                <span>Editar</span>
+                            </a>
+                        </td>
+                        <td>
+                            <a routerLink="/registro/eliminar-Asesor">
+                                <span>Eliminar</span>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><br>
+            <div class="card-action">
+                <a class="waves-effect waves-light black btn" routerLink="/registro/crear-Asesor">Registrar
+                    Asesor</a>
+            </div>
+        </div>
+    </div>
+</div>
