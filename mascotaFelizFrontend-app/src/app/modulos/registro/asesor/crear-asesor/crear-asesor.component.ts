@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AsesorModelo } from 'src/app/modelos/asesor.modelo';
@@ -14,10 +14,10 @@ const cryptoJS = require('crypto-js');
   templateUrl: './crear-asesor.component.html',
   styleUrls: ['./crear-asesor.component.css']
 })
-export class CrearAsesorComponent {
-  listadoAsesores: SolicitudModelo [] = [];
-  listadoPlanes: MascotaModelo[] =[];
-  
+export class CrearAsesorComponent implements OnInit {
+  listadoAsesores: SolicitudModelo[] = [];
+  listadoPlanes: MascotaModelo[] = [];
+
 
   formAsesor: FormGroup = this.formBuilder.group({
     'PrimerNombre': ['', [Validators.required]],
@@ -35,19 +35,19 @@ export class CrearAsesorComponent {
     'MascotaId': ['', [Validators.required]],
   });
 
-   constructor(
-     private formBuilder: FormBuilder,
-     private asesorService: AsesorService,
-     private router: Router,
-     private solicitudService: SolicitudService,
-     private mascotaService: MascotaService
-   ) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private asesorService: AsesorService,
+    private router: Router,
+    private solicitudService: SolicitudService,
+    private mascotaService: MascotaService
+  ) { }
 
 
   ngOnInit(): void {
   }
 
-  guardarAsesorr() {
+  guardarAsesor() {
     let asesor: AsesorModelo = {
       primerNombre: this.formAsesor.controls['PrimerNombre'].value,
       segundoNombre: this.formAsesor.controls['SegundoNombre'].value,

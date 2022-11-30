@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdministradorModelo } from 'src/app/modelos/administrador.modelo';
@@ -14,10 +14,9 @@ const cryptoJS = require('crypto-js');
   templateUrl: './crear-administrador.component.html',
   styleUrls: ['./crear-administrador.component.css']
 })
-export class CrearAdministradorComponent {
+export class CrearAdministradorComponent implements OnInit {
   listadoAsesores: AsesorModelo [] = [];
   listadoPlanes: PlanModelo[] =[];
-  
 
   formAdministrador: FormGroup = this.formBuilder.group({
     'PrimerNombre': ['', [Validators.required]],
@@ -29,10 +28,10 @@ export class CrearAdministradorComponent {
     'Ciudad': ['', [Validators.required]],
     'Direccion': ['', [Validators.required]],
     'Telefono': ['', [Validators.required]],
-    'Email': ['', [Validators.required]],
-    'Clave': ['', [Validators.required]],
     'AsesorId': ['', [Validators.required]],
     'PlanId': ['', [Validators.required]],
+    'Email': ['', [Validators.required]],
+    'Clave': ['', [Validators.required]],
   });
 
    constructor(
@@ -58,10 +57,10 @@ export class CrearAdministradorComponent {
       ciudad: this.formAdministrador.controls['Ciudad'].value,
       direccion: this.formAdministrador.controls['Direccion'].value,
       telefono: this.formAdministrador.controls['Telefono'].value,
-      email: this.formAdministrador.controls['Email'].value,
-      clave: cryptoJS.MD5(this.formAdministrador.controls['Clave'].value).toString(),
       asesorId: this.formAdministrador.controls['AsesorId'].value,
       planId: this.formAdministrador.controls['PlanId'].value,
+      email: this.formAdministrador.controls['Email'].value,
+      clave: cryptoJS.MD5(this.formAdministrador.controls['Clave'].value).toString(),
     }
     this.administradorService.crearAdministrador(administrador)
       .subscribe({

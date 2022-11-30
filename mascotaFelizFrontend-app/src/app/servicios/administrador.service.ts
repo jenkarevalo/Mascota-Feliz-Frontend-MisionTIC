@@ -38,7 +38,7 @@ export class AdministradorService {
     });
   }
 
-  getAdministradorXId(id:string): Observable<AdministradorModelo> {
+  getAdministradorXId(id: string): Observable<AdministradorModelo> {
     return this.http.get<AdministradorModelo>(`${this.url}/administradores/${id}`, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`,
@@ -48,7 +48,7 @@ export class AdministradorService {
 
   eliminarAdministrador(id: string): Observable<any> {
     return this.http.delete(`${this.url}/administradores/${id}`, {
-      headers:  new HttpHeaders({
+      headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`,
       })
     });

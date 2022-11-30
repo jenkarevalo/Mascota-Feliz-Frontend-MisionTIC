@@ -1,4 +1,4 @@
-<!-- <section class="container"> 
+<section class="container"> 
     <div class="row registro-titulo">
         <div class="col s12">
             <h2 class="center-align">Regístro de Asesores</h2>
@@ -9,7 +9,7 @@
     <div class="row ">
         <div class="col s12">
             <div class="card-panel">
-                <form [formGroup]="formAsesor" (ngSubmit)="guardarAsesor()" action="">
+                <form [formGroup]="formAsesor" (ngSubmit)="guardarAsesor()">
                     <div class="row">
                         <div class="input-field col s12 m6">
                             <input formControlName="PrimerNombre" placeholder="" id="primerNombre" type="text"
@@ -64,12 +64,6 @@
                             <label for="email">Email</label>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input formControlName="Clave" id="clave" type="clave" class="validate">
-                            <label for="clave">clave</label>
-                        </div>
-                    </div>
                     <div class="section">
                         <div class="row">
                             <div class="col s12">
@@ -84,4 +78,4 @@
             </div>
         </div>
     </div>
-</section>-->
+</section>

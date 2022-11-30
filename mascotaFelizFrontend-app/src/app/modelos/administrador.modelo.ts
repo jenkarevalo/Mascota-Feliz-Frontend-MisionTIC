@@ -9,8 +9,8 @@ export class AdministradorModelo {
     ciudad?: string;
     direccion?: string;
     telefono?: string;
-    email?: string;
-    clave?: string;
     asesorId?: string;
     planId?: string;
+    email?: string;
+    clave?: string;
 }

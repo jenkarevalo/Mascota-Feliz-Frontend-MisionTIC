@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LoginModelo } from 'src/app/modelos/login.modelo';
@@ -9,7 +9,7 @@ import { SeguridadService } from 'src/app/servicios/seguridad.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   seInicioSesion: boolean = false;
   subs: Subscription = new Subscription();
 
@@ -23,9 +23,9 @@ export class NavbarComponent {
     this.subs = this.seguridadService.getDatosUsuarioEnSesion()
       .subscribe((datos: LoginModelo) => {
         this.seInicioSesion = datos.enSesion != null ? datos.enSesion: false;
-        this.route.navigate(["/administrador/buscar-administrador"]);
-        this.route.navigate(["/asesor/buscar-asesor"]);
-        this.route.navigate(["/cliente/buscar-cliente"]);
+        this.route.navigate(["/administrador/buscar-Administrador"]);
+        this.route.navigate(["/asesor/buscar-Asesor"]);
+        this.route.navigate(["/cliente/buscar-Cliente"]);
       });
   }
 

@@ -9,7 +9,7 @@
     <div class="row ">
         <div class="col s12">
             <div class="card-panel">
-                <form [formGroup]="formAdministrador" (ngSubmit)="guardarAdministrador()" action="">
+                <form [formGroup]="formAdministrador" (ngSubmit)="guardarAdministrador()">
                     <input formControlName="id" type="text" readonly>
                     <div class="row">
                         <div class="input-field col s12 m6">
@@ -63,12 +63,6 @@
                         <div class="input-field col s12">
                             <input formControlName="Email" id="email" type="email" class="validate">
                             <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input formControlName="Clave" id="clave" type="clave" class="validate">
-                            <label for="clave">clave</label>
                         </div>
                     </div>
                     <div class="section">

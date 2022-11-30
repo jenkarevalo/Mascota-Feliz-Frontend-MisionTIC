@@ -1,1 +1,61 @@
-<p>buscar-cliente works!</p>
+<div class="row">
+    <div class="col s12 m11">
+      <div class="card">
+        <div class="card-image">
+          <img src="../../../../../assets/Habitantes.jpg">
+        </div>
+        <table class="striped">
+          <thead>
+            <tr>
+              <th>Primer Nombre</th>
+              <th>Segundo Nombre</th>
+              <th>Primer Apellido</th>
+              <th>Segundo Apellido</th>
+              <th>Tipo de Documento</th>
+              <th>Numero de Documento</th>
+              <th>Ciudad</th>
+              <th>Direccion</th>
+              <th>Telefono</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let clien of listadoClientes">
+              <td>{{clien.primerNombre}}</td>
+              <td>{{clien.segundoNombre}}</td>
+              <td>{{clien.primerApellido}}</td>
+              <td>{{clien.segundoApellido}}</td>
+              <td>{{clien.tipoDocumento}}</td>
+              <td>{{clien.numeroDocumento}}</td>
+              <td>{{clien.ciudad}}</td>
+              <td>{{clien.direccion}}</td>
+              <td>{{clien.telefono}}</td>
+              <td>{{clien.email}}</td>
+              <td>
+                <a routerLink='/registro/editar-Cliente/{{clien.id}}'>
+                  <span>Editar</span>
+                </a>
+              </td>
+              <td>
+                <a routerLink='/registro/eliminar-Cliente/{{clien.id}}'>
+                  <span>Eliminar</span>
+                </a>
+              </td>
+              <td>
+                <a routerLink="/registro/cliente/detalle-Cliente/{{clien.id}}">
+                  <span>Detalle</span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br><br>
+        <div class="card-action">
+          <a class="waves-effect waves-light black btn" routerLink="/registro/crear-Cliente">Registrar
+            Cliente</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

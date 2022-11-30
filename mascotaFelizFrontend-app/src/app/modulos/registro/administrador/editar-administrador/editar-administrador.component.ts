@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdministradorModelo } from 'src/app/modelos/administrador.modelo';
 import { AdministradorService } from 'src/app/servicios/administrador.service';
 import { AsesorService } from 'src/app/servicios/asesor.service';
@@ -15,6 +15,7 @@ export class EditarAdministradorComponent {
   id: string = '';  
 
   formAdministrador: FormGroup = this.formBuilder.group({
+    'id': ['', [Validators.required]],
     'PrimerNombre': ['', [Validators.required]],
     'SegundoNombre': ['', [Validators.required]],
     'PrimerApellido': ['', [Validators.required]],
@@ -34,16 +35,20 @@ export class EditarAdministradorComponent {
      private formBuilder: FormBuilder,
      private administradorService: AdministradorService,
      private router: Router,
+     private route: ActivatedRoute,
      private asesorService: AsesorService,
      private planService: PlanService
    ) { }
 
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+    this.getAdministrador();
   }
 
   guardarAdministrador() {
     let administrador: AdministradorModelo = {
+      id: this.formAdministrador.controls['id'].value,
       primerNombre: this.formAdministrador.controls['PrimerNombre'].value,
       segundoNombre: this.formAdministrador.controls['SegundoNombre'].value,
       primerApellido: this.formAdministrador.controls['PrimerApellido'].value,

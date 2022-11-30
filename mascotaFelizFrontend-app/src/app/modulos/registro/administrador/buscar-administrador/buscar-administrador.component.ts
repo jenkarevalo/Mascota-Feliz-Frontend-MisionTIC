@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AdministradorModelo } from 'src/app/modelos/administrador.modelo';
 import { AdministradorService } from 'src/app/servicios/administrador.service';
 
@@ -7,7 +7,7 @@ import { AdministradorService } from 'src/app/servicios/administrador.service';
   templateUrl: './buscar-administrador.component.html',
   styleUrls: ['./buscar-administrador.component.css']
 })
-export class BuscarAdministradorComponent {
+export class BuscarAdministradorComponent implements OnInit {
   listadoAdministradores: AdministradorModelo[] = [];
   
   constructor(
